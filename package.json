@@ -1,10 +1,10 @@
 {
   "name": "testasd",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "server": "node server.js",
+    "server": "pm2 start ecosystem.config.js && pm2 logs",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -22,10 +22,15 @@
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
     "body-parser": "^1.18.3",
+    "connect-session-sequelize": "^5.2.2",
     "core-js": "^2.5.4",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
+    "http": "0.0.0",
+    "mysql2": "^1.6.1",
+    "path": "^0.12.7",
     "rxjs": "^6.0.0",
+    "sequelize": "^4.38.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

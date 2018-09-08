@@ -1,12 +1,10 @@
 const express = require('express');
 const path = require('path');
 const http = require('http');
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8000;
 const bodyParser = require('body-parser');
-const session = require('express-session');
-const config = require('./server/config');
 
-const apiRoutes = require('./server/routes/v1');
+const routesV1 = require('./server/routes/v1');
 
 const app = express();
 
@@ -17,7 +15,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 // Routes
-app.use('/api', apiRoutes);
+app.use('/api/v1', routesV1);
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist/index.html'));
 });

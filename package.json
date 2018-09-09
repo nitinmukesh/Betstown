@@ -1,5 +1,5 @@
 {
-  "name": "testasd",
+  "name": "betstown",
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
@@ -30,6 +30,7 @@
     "mysql2": "^1.6.1",
     "path": "^0.12.7",
     "rxjs": "^6.0.0",
+    "sanitize.css": "^7.0.3",
     "sequelize": "^4.38.0",
     "zone.js": "^0.8.26"
   },

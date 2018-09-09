@@ -27,6 +27,7 @@
               "src/assets"
             ],
             "styles": [
+              "../node_modules/sanitize.css/sanitize.css",
               "src/styles.scss"
             ],
             "scripts": []

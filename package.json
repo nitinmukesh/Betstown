@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config proxy.config.json",
     "server": "pm2 start ecosystem.config.js && pm2 logs",
     "build": "ng build",
     "test": "ng test",

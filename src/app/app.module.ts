@@ -13,6 +13,7 @@ import { HomeComponent } from 'app/pages/home/home.component';
 import { ProfileComponent } from 'app/pages/profile/profile.component';
 import { SingupComponent } from 'app/pages/singup/singup.component';
 import { UserComponent } from 'app/pages/user/user.component';
+import { NewsComponent } from './pages/news/news.component';
 
 // Components
 
@@ -22,7 +23,8 @@ import { UserComponent } from 'app/pages/user/user.component';
     HomeComponent,
     ProfileComponent,
     SingupComponent,
-    UserComponent
+    UserComponent,
+    NewsComponent
   ],
   imports: [
     RouterModule,

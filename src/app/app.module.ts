@@ -3,15 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { HttpClientModule } from '@angular/common/http';
 
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app_routing.module';
+import { AppComponent } from 'app/app.component';
+import { AppRoutingModule } from 'app/app_routing.module';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from 'app/shared/shared.module';
+
+// Pages
+import { HomeComponent } from 'app/pages/home/home.component';
+import { ProfileComponent } from 'app/pages/profile/profile.component';
+import { SingupComponent } from 'app/pages/singup/singup.component';
+import { UserComponent } from 'app/pages/user/user.component';
 
 // Components
-import { HomeComponent } from 'app/components/home/home.component';
-import { ProfileComponent } from 'app/components/profile/profile.component';
-import { SingupComponent } from 'app/components/singup/singup.component';
-import { UserComponent } from 'app/components/user/user.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import { UserComponent } from 'app/components/user/user.component';
     RouterModule,
     AppRoutingModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,9 @@
+'use strict';
+
+const bcrypt = require('bcrypt');
+
 module.exports = (sequelize, type) => {
-    return sequelize.define('users', {
+    const User = sequelize.define('users', {
         id: {
             type: type.INTEGER,
             primaryKey: true,
@@ -7,12 +11,37 @@ module.exports = (sequelize, type) => {
         },
         username: {
             type: type.STRING,
-            allowNull: false
+            allowNull: false,
+            unique: true,
+            isAlphanumeric: true,
+            notEmpty: true,
+            len: [4, 20]
+        },
+        email: {
+            type: type.STRING,
+            allowNull: false,
+            unique: true,
+            isEmail: true
+        },
+        password: {
+            type: type.STRING,
+            allowNull: false,
+            unique: true
         }
     }, {
-        indexes: [{
-            unique: true,
-            fields: ['username']
-        }]
-    })
+        hookes: {
+            beforeCreate: (user) => {
+                const salt = bcrypt.genSaltSync();
+                user.password = bcrypt.hashSync(user.password, salt);
+            }
+        },
+        instanceMethods: {
+            validPassword: (password) => {
+                return bcrypt.compareSync(password, this.password);
+            }
+        }
+    });
+
+
+    return User;
 }

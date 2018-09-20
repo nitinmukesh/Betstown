@@ -1,9 +1,15 @@
 const express = require('express');
-const NewsRouter = express.Router();
+const news = express.Router();
+const models = _require('/models');
 
 // Routes
-NewsRouter.route('/')
+news.route('/')
     .get((req, res) => {
+
+        models.news.findAll().then(news => {
+            console.log(news);
+        })
+
         res.status(200).json([{
             title: "Some Random news"
         }]);
@@ -14,4 +20,11 @@ NewsRouter.route('/')
         });
     });
 
-module.exports = NewsRouter;
+news.route('/:slug')
+    .get((req, res) => {
+        res.status(200).json({
+            title: "Some Random news"
+        })
+    });
+
+module.exports = news;

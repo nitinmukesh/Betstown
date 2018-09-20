@@ -1,8 +1,8 @@
 module.exports = {
   apps : [{
     name      : 'API',
-    script    : 'server.js',
-    watch: ["server", "server.js"],
+    script    : './server/app.js',
+    watch: ["server", "server.js", "bin"],
     env: {
       NODE_ENV: 'development'
     },

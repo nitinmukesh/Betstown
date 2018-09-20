@@ -1,11 +1,11 @@
 const express = require('express');
-const UsersRoutes = express.Router();
+const users = express.Router();
 
 // Routes
-UsersRoutes.get('/', (req, res) => {
+users.get('/', (req, res) => {
     res.status(200).json({
         message: "users loaded"
     });
 });
 
-module.exports = UsersRoutes;
+module.exports = users;
